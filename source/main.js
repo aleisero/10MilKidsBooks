@@ -15,8 +15,6 @@ function preload() {
 	'origin':['I am #emotion.a# #animal#.'],
 	});
 
-	//grammar.addModifiers(tracery.baseEngModifiers); 
-
 	console.log(grammar.flatten('#origin#'));
 }
 
