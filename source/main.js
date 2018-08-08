@@ -6,14 +6,17 @@ var game = new Phaser.Game(1000, 600, Phaser.AUTO, '', { preload: preload, creat
 var pg1, pg2, pg3;
 var body;
 var grammar;
+var resetButton;
+var isFirst = true;
 
 function preload() {
 	// preload assets
+	game.load.image('resetButton', 'assets/resetButton.png');
 	
 	storyReset();
 }
 
-function storyReset() {
+var storyReset = function() {
 	//empty strings to print story pages to screen
 	pg1 = '';
 	pg2 = '';
@@ -39,6 +42,15 @@ function storyReset() {
 			pg3 = pg3 + curChar;
 		}
 	}
+	
+	if(!isFirst){
+		body.setText(pg1);
+	}
+	isFirst = false;
+	
+	console.log(pg1);
+	console.log(pg2);
+	console.log(pg3);
 }
 
 function create() {
@@ -49,6 +61,11 @@ function create() {
 	style = {font: "25px Arial", fill: "#000000", align: "center", boundsAlignH: "center", boundsAlignV: "middle"};
 	body = game.add.text(0, 0, pg1, style);
 	body.setTextBounds(0, 0, game.world.width, 300);
+	
+	//place reset button
+	var resetButton = game.add.image(0,0,"resetButton");
+	resetButton.inputEnabled = true;
+	resetButton.events.onInputDown.add(storyReset, this);
 	
 }
 

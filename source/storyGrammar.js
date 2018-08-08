@@ -20,7 +20,7 @@ var storyGrammar = {
 	'p1': ['#intro#, #place#, there was #descript.a# #protagonist#.'],
 	'p2': ['The #protagonist# #action# and felt #emotion#.'],
 	'p3': ['Then, the #protagonist# #action# until bedtime. The end.'],
-	'story' : ['#p1# $ #p2# $ #p3#'],
+	'story' : ['#p1#$#p2#$#p3#'],
 	'origin':['#[protagonist:#characters#][place:#setting#][personality:#descript#]story#'],
 	}
 
