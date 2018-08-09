@@ -3,7 +3,7 @@
 // :3
 
 var game = new Phaser.Game(1000, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
-var pg1, pg2, pg3;
+var pg0, pg1, pg2, pg3;
 var body;
 var grammar;
 var resetButton;
@@ -18,19 +18,23 @@ function preload() {
 
 var storyReset = function() {
 	//empty strings to print story pages to screen
+	pg0 = '';
 	pg1 = '';
 	pg2 = '';
 	pg3 = '';
 	
 	grammar = tracery.createGrammar(storyGrammar);
 	var story = grammar.flatten('#origin#');
-	var pg = 1;
+	var pg = 0;
 	
 	//loop to fill story page strings w/ story from grammar
 	for (var i = 0; i < story.length; i++) {
 		let curChar = story.charAt(i);
 		if(curChar === '$') {
 			pg++;
+		}
+		else if (pg === 0) {
+		pg0 = pg0 + curChar;
 		}
 		else if (pg === 1) {
 			pg1 = pg1 + curChar;
@@ -44,10 +48,11 @@ var storyReset = function() {
 	}
 	
 	if(!isFirst){
-		body.setText(pg1);
+		body.setText(pg0);
 	}
 	isFirst = false;
 	
+	console.log(pg0);
 	console.log(pg1);
 	console.log(pg2);
 	console.log(pg3);
@@ -59,7 +64,7 @@ function create() {
 	
 	//place text
 	style = {font: "25px Arial", fill: "#000000", align: "center", boundsAlignH: "center", boundsAlignV: "middle"};
-	body = game.add.text(0, 0, pg1, style);
+	body = game.add.text(0, 0, pg0, style);
 	body.setTextBounds(0, 0, game.world.width, 300);
 	
 	//place reset button
@@ -80,7 +85,10 @@ function update() {
 }
 
 function nextPage(){
-	if(body.text == pg1) {
+	if (body.text == pg0) {
+		body.setText(pg1);
+	}
+	else if(body.text == pg1) {
 		body.setText(pg2);
 	}
 	else if(body.text == pg2) {
@@ -94,5 +102,8 @@ function prevPage(){
 	}
 	else if(body.text == pg2) {
 		body.setText(pg1);
+	}
+	else if (body.text == pg1) {
+		body.setText(pg0);
 	}
 }

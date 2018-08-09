@@ -3,24 +3,31 @@
 
 var storyGrammar = {
 	'intro': ['Once upon a time', 'One day', 'A week ago', 'Last year', 'In the distant future', 'One sunny day'],
-	'characters': ['fox', 'owl', 'panda', 'gecko', 'princess', 'prince', 'knight', 'bear', 'horse', 'unicorn'],
-	'setting': ['in a forest', 'in a faraway land', 'in a galaxy far far away', 'in a magic swamp', 'in a large castle'],
+	'characters': ['fox', 'owl', 'panda', 'gecko', 'princess', 'prince', 'knight', 'bear', 'horse', 'unicorn', 'poof', 'frog', 't-rex'],
+	'setting': ['in a forest', 'in a faraway land', 'in a galaxy far far away', 'in a magic swamp', 'in a large castle', 'at home', 'at school', 'at the park', 'in the big city'],
 	
 	'descript':['#introvert#', '#extravert#'],
-	'introvert':['shy', 'insecure', 'quiet', 'contemplative', 'adventerous', 'friendly'],
-	'extravert':['brave', 'bold', 'outgoing', 'loud', 'adventerous', 'friendly'],
+	'introvert':['shy', 'insecure', 'quiet', 'contemplative', 'adventerous', 'friendly', 'calm', 'serene', 'reserved', 'mute', 'peaceful', 'muffled', 'timorous', 'fearful', 'nimble', 'purposeful'],
+	'extravert':['brave', 'bold', 'outgoing', 'loud', 'adventerous', 'friendly', 'boisterous', 'turbulent', 'wild', 'uproarious', 'gallant', 'heroic', 'curageous', 'daring', 'lively', 'busy'],
 	
-	'action' : ['#objectverb# #object.a#', '#standaloneverb#'],
-	'object' : ['apple', 'turnip', 'baseball', 'clothes', 'vase', 'mp3 player', 'balloon', 'teddybear'], 
+	'action' : ['#objectverb# #object.a#', '#movementverb#', '#movementverb# #setting#'],
+	'object' : ['apple', 'turnip', 'baseball', 'tree', 'vase', 'mp3 player', 'balloon', 'teddybear', 'skateboard', 'banana', 'table', 'leg warmer', 'candle', 'shawl', 'paint brush', 'magnet', 'rubber band', 'sock', 'doll', 'box', 'model car', 'flower'], 
 	'objectverb' : ['threw', 'found', 'investigated', 'saw', 'lost'],
-	'standaloneverb' : ['danced', 'jumped', 'ran', 'skipped'],
+	'movementverb' : ['danced', 'jumped', 'ran', 'skipped', 'relaxed', 'swam', 'cartwheeled'],
 	
-	'emotion' : ['sad', 'happy', 'excited', 'jelous', 'afraid', 'spooked', 'proud'],
+	'emotion' : ['#emotionNeg#', '#emotionPos#'],
+	'emotionNeg' : ['sad', 'jealous', 'afraid', 'spooked', 'disgusted', 'pensiveness', 'melancholic', 'angry', 'anticipation', 'boredom'],
+	'emotionPos' : ['happy', 'excited', 'proud', 'acceptance', 'amazement', 'joyous', 'joy', 'serenity', 'awe', 'optimistic'],
 	
-	'p1': ['#intro#, #place#, there was #descript.a# #protagonist#.'],
-	'p2': ['The #protagonist# #action# and felt #emotion#.'],
-	'p3': ['Then, the #protagonist# #action# until bedtime. The end.'],
-	'story' : ['#p1#$#p2#$#p3#'],
+	'dialogue' : ['What a wonderful day!',  'Man, I really learned a lesson.', 'I felt #emotionPos# today.', 'I felt #emotionNeg# earlier, but now I feel #emotionPos#.'],
+	
+	'closing' : ['until bedtime and felt #emotionPos#', 'until bedtime', 'with friends', 'and saved the world', 'and made new friends'],
+	
+	'p0' : ['The #personality.capitalize# #protagonist.capitalize#', '#protagonist.capitalize# #setting.capitalizeAll#'],
+	'p1' : ['#intro#, #place#, there was #personality.a# #protagonist#.', '#intro#, there was #personality.a# #protagonist# who lived #place#.'],
+	'p2' : ['The #protagonist# #action# and felt #emotion#.', 'Because the #protagonist# felt #emotion#, they #action#.'],
+	'p3' : ['Then, the #protagonist# #action# #closing#. The end.', 'Then, the #protagonist# said "#dialogue#" The end.', 'Then, the #protagonist# #action# and said "#dialogue#". The end.'],
+	'story' : ['#p0#$#p1#$#p2#$#p3#'],
 	'origin':['#[protagonist:#characters#][place:#setting#][personality:#descript#]story#'],
 	}
 
