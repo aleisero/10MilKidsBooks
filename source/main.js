@@ -42,6 +42,21 @@ function preload() {
 	game.load.image('school', 'assets/school.jpg');
 	game.load.image('swamp', 'assets/swamp.jpg');
 	game.load.image('galaxy', 'assets/galaxy.jpg')
+	
+	//preload character images
+	game.load.image('princess', 'assets/princess.png');
+	game.load.image('prince', 'assets/prince.png');
+	game.load.image('knight', 'assets/knight.png');
+	game.load.image('horse', 'assets/horse.png');
+	game.load.image('unicorn', 'assets/unicorn.png');
+	game.load.image('bear', 'assets/bear.png');
+	game.load.image('frog', 'assets/frog.png');
+	game.load.image('fox', 'assets/fox.png');
+	game.load.image('owl', 'assets/owl.png');
+	game.load.image('gecko', 'assets/gecko.png');
+	game.load.image('panda', 'assets/panda.png');
+	game.load.image('poof', 'assets/poof.png');
+	game.load.image('trex', 'assets/trex.png');
 }
 
 var storyReset = function() {
