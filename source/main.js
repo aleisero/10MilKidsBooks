@@ -21,6 +21,8 @@ var isFirst = true;
 //asset variables
 var spread;
 var setting;
+var character;
+var book, flip, crumple;
 
 function preload() {
 	//preload UI images
@@ -44,7 +46,7 @@ function preload() {
 	game.load.image('galaxy', 'assets/galaxy.jpg')
 	
 	//preload character images
-	game.load.image('princess', 'assets/princess.png');
+	game.load.image('princess', 'assets/princcess.png');
 	game.load.image('prince', 'assets/prince.png');
 	game.load.image('knight', 'assets/knight.png');
 	game.load.image('horse', 'assets/horse.png');
@@ -53,10 +55,18 @@ function preload() {
 	game.load.image('frog', 'assets/frog.png');
 	game.load.image('fox', 'assets/fox.png');
 	game.load.image('owl', 'assets/owl.png');
-	game.load.image('gecko', 'assets/gecko.png');
+	game.load.image('geko', 'assets/geko.png');
 	game.load.image('panda', 'assets/panda.png');
 	game.load.image('poof', 'assets/poof.png');
 	game.load.image('trex', 'assets/trex.png');
+	
+	//preload SFX
+	//https://freesound.org/people/fellur/sounds/429724/
+	game.load.audio('book', 'assets/book page.ogg');
+	//https://freesound.org/people/ROFD/sounds/188485/
+	game.load.audio('flip', 'assets/flip page.ogg');
+	//https://freesound.org/people/j1987/sounds/106127/
+	game.load.audio('crumple', 'assets/crumple.ogg');
 }
 
 var storyReset = function() {
@@ -130,6 +140,11 @@ var storyReset = function() {
 		body.setText(pg0);
 		spread.visible = false;
 		setting.visible = false;
+		character.visible = false;
+		if(game.rnd.frac() > 0.5){
+			character.scale.setTo(-1, 1);
+		}
+		crumple.play();
 	}
 	else {
 		isFirst = false;
@@ -179,6 +194,17 @@ function create() {
 	setting = game.add.image(60, 90, 'forest');
 	setting.scale.setTo(0.9,0.9);
 	setting.visible = false;
+	
+	//place character image
+	character = game.add.image(132, 306, 'panda');
+	character.anchor.x = 0.5;
+	character.anchor.y = 0.5;
+	character.visible = false;
+	
+	//create sound assets
+	book = game.add.audio('book');
+	flip = game.add.audio('flip');
+	crumple = game.add.audio('crumple');
 }
 
 function update() {
@@ -189,24 +215,38 @@ function update() {
 }
 
 function nextPage(){
+	//randomly choose one of two page turning SFX
+	if(game.rnd.frac() > 0.5){
+		book.play();
+	}
+	else {
+		flip.play();
+	}
+	
+	//Go to next page depending on current page
 	if (body.text == pg0) {
 		body.setText(pg1);
 		spread.visible = true;
 		findSetting(pg1);
+		findCharacter(pg1);
 		setting.visible = true;
+		character.visible = true;
 	}
 	else if(body.text == pg1) {
 		body.setText(pg2);
 		findSetting(pg2);
+		findCharacter(pg2);
 	}
 	else if(body.text == pg2) {
 		body.setText(pg3);
 		findSetting(pg3);
+		findCharacter(pg3);
 	}
 	else if(body.text == pg3){
 		body.setText(pg0);
 		spread.visible = false;
 		setting.visible = false;
+		character.visible = false;
 	}
 }
 
@@ -246,5 +286,60 @@ function findSetting(page){
 	else if(page.includes('swamp'))
 	{	
 		setting.loadTexture('swamp');
+	}
+}
+
+function findCharacter(page){
+	if(page.includes('bear'))
+	{
+		character.loadTexture('bear');
+	}
+	else if(page.includes('fox'))
+	{
+		character.loadTexture('fox');
+	}
+	else if(page.includes('frog'))
+	{
+		character.loadTexture('frog');
+	}
+	else if(page.includes('gecko'))
+	{
+		character.loadTexture('geko');
+	}
+	else if(page.includes('horse'))
+	{	
+		character.loadTexture('horse');
+	}
+	else if(page.includes('knight'))
+	{	
+		character.loadTexture('knight');
+	}
+	else if(page.includes('panda'))
+	{	
+		character.loadTexture('panda');
+	}
+	else if(page.includes('owl'))
+	{	
+		character.loadTexture('owl');
+	}
+	else if(page.includes('poof'))
+	{	
+		character.loadTexture('poof');
+	}
+	else if(page.includes('princess'))
+	{	
+		character.loadTexture('princess');
+	}
+	else if(page.includes('prince'))
+	{	
+		character.loadTexture('prince');
+	}
+	else if(page.includes('t-rex'))
+	{	
+		character.loadTexture('trex');
+	}
+	else if(page.includes('unicorn'))
+	{	
+		character.loadTexture('unicorn');
 	}
 }
