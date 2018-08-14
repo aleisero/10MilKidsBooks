@@ -235,12 +235,10 @@ function nextPage(){
 	else if(body.text == pg1) {
 		body.setText(pg2);
 		findSetting(pg2);
-		findCharacter(pg2);
 	}
 	else if(body.text == pg2) {
 		body.setText(pg3);
 		findSetting(pg3);
-		findCharacter(pg3);
 	}
 	else if(body.text == pg3){
 		body.setText(pg0);
