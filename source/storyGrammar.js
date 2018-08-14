@@ -25,9 +25,10 @@ var storyGrammar = {
 	
 	'p0' : ['The #personality.capitalize# #protagonist.capitalize#', '#protagonist.capitalize# #setting.capitalizeAll#'],
 	'p1' : ['#intro#, #place#, there was #personality.a# #protagonist#.', '#intro#, there was #personality.a# #protagonist# who lived #place#.'],
-	'p2' : ['The #protagonist# #action# and felt #emotion#.', 'Because the #protagonist# felt #emotion#, they #action#.'],
+	'p2' : ['The #protagonist# #action# and felt #emotion#.', 'Because the #protagonist# felt #emotion#, they #action#.', 'The #protagonist# had a friend, the #char2#. They #action# together.', 'The #protagonist# met #descript.a# #char2#.', 'The #protagonist# and the #char2# #movementverb# #setting#.'],
 	'p3' : ['Then, the #protagonist# #action# #closing#. The end.', 'Then, the #protagonist# said "#dialogue#" The end.', 'Then, the #protagonist# #action# and said "#dialogue#" The end.'],
 	'story' : ['#p0#$#p1#$#p2#$#p3#'],
-	'origin':['#[protagonist:#characters#][place:#setting#][personality:#descript#]story#'],
+	'origin':['#[protagonist:#characters#][place:#setting#][personality:#descript#][char2:#characters#]story#'],
 	}
 
+ 
