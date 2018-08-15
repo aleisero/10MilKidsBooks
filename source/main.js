@@ -26,47 +26,47 @@ var book, flip, crumple;
 
 function preload() {
 	//preload UI images
-	game.load.image('resetButton', 'assets/resetButton.png');
-	game.load.image('nextButton', 'assets/nextButton.png');
+	game.load.image('resetButton', 'assets/UI/resetButton.png');
+	game.load.image('nextButton', 'assets/UI/nextButton.png');
 	
 	//preload environment images
-	game.load.image('cover', 'assets/cover.png');
-	game.load.image('spread', 'assets/spread.png');
-	game.load.image('wood', 'assets/wood.jpg');
+	game.load.image('cover', 'assets/UI/cover.png');
+	game.load.image('spread', 'assets/UI/spread.png');
+	game.load.image('wood', 'assets/UI/wood.jpg');
 	
 	//preload setting images
-	game.load.image('castle', 'assets/castle.jpg');
-	game.load.image('city', 'assets/city.jpg');
-	game.load.image('faraway land', 'assets/faraway land.jpg');
-	game.load.image('forest', 'assets/forest.jpg');
-	game.load.image('home', 'assets/home.jpg');
-	game.load.image('park', 'assets/park.jpg');
-	game.load.image('school', 'assets/school.jpg');
-	game.load.image('swamp', 'assets/swamp.jpg');
-	game.load.image('galaxy', 'assets/galaxy.jpg')
+	game.load.image('castle', 'assets/bg/castle.jpg');
+	game.load.image('city', 'assets/bg/city.jpg');
+	game.load.image('faraway land', 'assets/bg/faraway land.jpg');
+	game.load.image('forest', 'assets/bg/forest.jpg');
+	game.load.image('home', 'assets/bg/home.jpg');
+	game.load.image('park', 'assets/bg/park.jpg');
+	game.load.image('school', 'assets/bg/school.jpg');
+	game.load.image('swamp', 'assets/bg/swamp.jpg');
+	game.load.image('galaxy', 'assets/bg/galaxy.jpg')
 	
 	//preload character images
-	game.load.image('princess', 'assets/princess.png');
-	game.load.image('prince', 'assets/prince.png');
-	game.load.image('knight', 'assets/knight.png');
-	game.load.image('horse', 'assets/horse.png');
-	game.load.image('unicorn', 'assets/unicorn.png');
-	game.load.image('bear', 'assets/bear.png');
-	game.load.image('frog', 'assets/frog.png');
-	game.load.image('fox', 'assets/fox.png');
-	game.load.image('owl', 'assets/owl.png');
-	game.load.image('gecko', 'assets/gecko.png');
-	game.load.image('panda', 'assets/panda.png');
-	game.load.image('poof', 'assets/poof.png');
-	game.load.image('t-rex', 'assets/t-rex.png');
+	game.load.image('princess', 'assets/chars/princess.png');
+	game.load.image('prince', 'assets/chars/prince.png');
+	game.load.image('knight', 'assets/chars/knight.png');
+	game.load.image('horse', 'assets/chars/horse.png');
+	game.load.image('unicorn', 'assets/chars/unicorn.png');
+	game.load.image('bear', 'assets/chars/bear.png');
+	game.load.image('frog', 'assets/chars/frog.png');
+	game.load.image('fox', 'assets/chars/fox.png');
+	game.load.image('owl', 'assets/chars/owl.png');
+	game.load.image('gecko', 'assets/chars/gecko.png');
+	game.load.image('panda', 'assets/chars/panda.png');
+	game.load.image('poof', 'assets/chars/poof.png');
+	game.load.image('t-rex', 'assets/chars/t-rex.png');
 	
 	//preload SFX
 	//https://freesound.org/people/fellur/sounds/429724/
-	game.load.audio('book', 'assets/book page.ogg');
+	game.load.audio('book', 'assets/audio/book page.ogg');
 	//https://freesound.org/people/ROFD/sounds/188485/
-	game.load.audio('flip', 'assets/flip page.ogg');
+	game.load.audio('flip', 'assets/audio/flip page.ogg');
 	//https://freesound.org/people/j1987/sounds/106127/
-	game.load.audio('crumple', 'assets/crumple.ogg');
+	game.load.audio('crumple', 'assets/audio/crumple.ogg');
 }
 
 var storyReset = function() {
