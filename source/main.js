@@ -35,15 +35,15 @@ function preload() {
 	game.load.image('wood', 'assets/UI/wood.jpg');
 	
 	//preload setting images
-	game.load.image('castle', 'assets/bg/castle.jpg');
-	game.load.image('city', 'assets/bg/city.jpg');
-	game.load.image('faraway land', 'assets/bg/faraway land.jpg');
-	game.load.image('forest', 'assets/bg/forest.jpg');
-	game.load.image('home', 'assets/bg/home.jpg');
-	game.load.image('park', 'assets/bg/park.jpg');
-	game.load.image('school', 'assets/bg/school.jpg');
-	game.load.image('swamp', 'assets/bg/swamp.jpg');
-	game.load.image('galaxy', 'assets/bg/galaxy.jpg')
+	game.load.image('castle', 'assets/castle.jpg');
+	game.load.image('city', 'assets/city.jpg');
+	game.load.image('faraway land', 'assets/faraway land.jpg');
+	game.load.image('forest', 'assets/forest.jpg');
+	game.load.image('home', 'assets/home.jpg');
+	game.load.image('park', 'assets/park.jpg');
+	game.load.image('school', 'assets/school.jpg');
+	game.load.image('swamp', 'assets/swamp.jpg');
+	game.load.image('galaxy', 'assets/galaxy.jpg')
 	
 	//preload character images
 	game.load.image('princess', 'assets/chars/princess.png');
