@@ -38,7 +38,7 @@ function preload() {
 	game.load.image('castle', 'assets/settings/castle.jpg');
 	game.load.image('city', 'assets/settings/city.jpg');
 	game.load.image('faraway land', 'assets/settings/faraway land.jpg');
-	game.load.image('forest', 'assets/settings/forest.jpg');
+	game.load.image('forest', 'assets/settings/forest.png');
 	game.load.image('home', 'assets/settings/home.jpg');
 	game.load.image('park', 'assets/settings/park.jpg');
 	game.load.image('school', 'assets/settings/school.jpg');
@@ -196,7 +196,7 @@ function create() {
 	spread.visible = false; 
 	
 	//place setting image
-	setting = game.add.sprite(60, 90, 'forest');
+	setting = game.add.image(60, 90, 'forest');
 	setting.scale.setTo(0.9,0.9);
 	setting.visible = false;
 	
