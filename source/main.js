@@ -35,15 +35,15 @@ function preload() {
 	game.load.image('wood', 'assets/UI/wood.jpg');
 	
 	//preload setting images
-	game.load.image('castle', 'assets/bg/castle.jpg');
-	game.load.image('city', 'assets/bg/city.jpg');
-	game.load.image('faraway land', 'assets/bg/faraway land.jpg');
-	game.load.image('forest', 'assets/bg/forest.jpg');
-	game.load.image('home', 'assets/bg/home.jpg');
-	game.load.image('park', 'assets/bg/park.jpg');
-	game.load.image('school', 'assets/bg/school.jpg');
-	game.load.image('swamp', 'assets/bg/swamp.jpg');
-	game.load.image('galaxy', 'assets/bg/galaxy.jpg')
+	game.load.image('castle', 'assets/settings/castle.jpg');
+	game.load.image('city', 'assets/settings/city.jpg');
+	game.load.image('faraway land', 'assets/settings/faraway land.jpg');
+	game.load.image('forest', 'assets/settings/forest.jpg');
+	game.load.image('home', 'assets/settings/home.jpg');
+	game.load.image('park', 'assets/settings/park.jpg');
+	game.load.image('school', 'assets/settings/school.jpg');
+	game.load.image('swamp', 'assets/settings/swamp.jpg');
+	game.load.image('galaxy', 'assets/settings/galaxy.jpg')
 	
 	//preload character images
 	game.load.image('princess', 'assets/chars/princess.png');
@@ -196,7 +196,7 @@ function create() {
 	spread.visible = false; 
 	
 	//place setting image
-	setting = game.add.image(60, 90, 'forest');
+	setting = game.add.sprite(60, 90, 'forest');
 	setting.scale.setTo(0.9,0.9);
 	setting.visible = false;
 	
